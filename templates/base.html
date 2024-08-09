@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie de Photos</title>
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/slicknav.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fresco.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"/>
+</head>
+<body>
+{% block content %}{% endblock %}
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="{{ url_for('static', filename='scripts.js') }}"></script>
+<script src="{{ url_for('static', filename='js/vendor/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery.slicknav.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/slick.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fresco.min.js') }}"></script>
+<script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

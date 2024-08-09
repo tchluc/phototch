@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Photos Favorites</h1>
+<form id="clearFavoritesForm" action="/clear-favorites" method="post">
+    <button type="submit">Vider les Favoris</button>
+</form>
+<div class="gallery">
+    {% if favorites %}
+    {% for photo in favorites %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <a class="gallery__item gallery" href="{{ photo }}" data-fresco-group="gallery">
+            <img src="{{ photo }}" alt="">
+        </a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>Aucun favoris trouvé.</p>
+    {% endif %}
+    <a href="/gallery">Go to Gallery</a>
+</div>
+
+{% endblock %}

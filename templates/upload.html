@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="upload-container">
+    <h2>Upload de Photos</h2>
+    <form id="uploadForm" method="post" action="/upload-photo" enctype="multipart/form-data">
+        <input type="file" id="photo" name="file" accept="image/*" required>
+        <button type="submit">Uploader</button>
+    </form>
+    <div id="uploadStatus"></div>
+    <a href="/gallery">Go to Gallery</a>
+</div>
+{% endblock %}

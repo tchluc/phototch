@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<img src="{{url_for('static', filename='gallery/logo.png')}}" alt="logo" style="width: 150px">
+<div class="gallery">
+    {% for photo in photos %}
+    <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="photo-container">
+            <a class="gallery__item gallery fresco" href="{{ photo }}" data-fresco-group="gallery">
+                <img src="{{ photo }}" alt="">
+            </a>
+            <div class="photo-buttons fresco" data-fresco-group-options="ui: 'outside'">
+                <button onclick="openQRCodeModal('{{ photo }}')"><i class="fa fa-qrcode"></i></button>
+                <button onclick="addToFavorites('{{ photo }}')"><i class="fa fa-heart"></i></button>
+                <button onclick="printImage('{{ photo }}')"><i class="fa fa-print"></i></button>
+            </div>
+
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<div id="qrModal" class="qr-modal fresco">
+    <span class="close-btn">&times;</span>
+    <div id="qrCode"></div>
+</div>
+<a href="/favorites-page">View Favorites</a>
+<a href="/">Go to Upload</a>
+
+
+{% endblock %}
